@@ -52,9 +52,9 @@ $password = '';
 ## 🏗️ Estrutura de Arquivos
 ```
 📦 cadastro-corretores
-├── 📂 assets
-│   ├── 📜 style.css        # Estilos customizados
-│   └── 📜 script.js        # Validações e interações
+|
+│── 📜 style.css        # Estilos customizados
+│── 📜 script.js        # Validações e interações
 ├── 📜 index.php            # Página principal
 ├── 📜 cadastrar.php        # Processa novos cadastros
 ├── 📜 editar.php           # Processa edições
