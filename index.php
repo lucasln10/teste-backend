@@ -99,7 +99,7 @@ if (isset($_GET['editar'])) {
                 <th>CRECI</th>
                 <th>Nome</th>
                 <th>Data Cadastro</th>
-                <th>Ações</th>
+                <th width="180">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -125,11 +125,21 @@ if (isset($_GET['editar'])) {
                     <td><?= htmlspecialchars($corretor['creci']) ?></td>
                     <td><?= htmlspecialchars($corretor['nome']) ?></td>
                     <td><?= date('d/m/Y H:i', strtotime($corretor['data_cadastro'])) ?></td>
-                    <td>
-                        <form action="excluir.php" method="POST" style="display:inline;">
+                    <td class="actions">
+    <!-- Botão Editar -->
+                        <a href="index.php?editar=<?= $corretor['id'] ?>" 
+                        class="btn btn-sm btn-warning me-1"
+                        title="Editar corretor">
+                            <i class="bi bi-pencil"></i> Editar
+                        </a>
+                        
+                        <!-- Botão Excluir -->
+                        <form action="excluir.php" method="POST" class="d-inline">
                             <input type="hidden" name="id" value="<?= $corretor['id'] ?>">
-                            <button type="submit" class="btn btn-sm btn-danger" 
-                                    onclick="return confirm('Tem certeza que deseja excluir este corretor?')">
+                            <button type="submit" 
+                                    class="btn btn-sm btn-danger"
+                                    title="Excluir corretor"
+                                    onclick="return confirm('Tem certeza que deseja excluir?')">
                                 <i class="bi bi-trash"></i> Excluir
                             </button>
                         </form>
