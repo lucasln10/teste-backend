@@ -17,6 +17,7 @@ if (isset($_GET['status'])) {
     }
 }
 
+
 // Carrega dados para edição se existir
 $edicao = [];
 if (isset($_GET['editar'])) {
@@ -39,6 +40,10 @@ if (isset($_GET['editar'])) {
         <h1 class="text-center mb-4">Cadastro de Corretor</h1>
         
         <?= $mensagem ?>
+        <!-- Adicione isso após a mensagem geral -->
+        <?php if (isset($_GET['message'])): ?>
+            <div class="alert alert-warning"><?= htmlspecialchars($_GET['message']) ?></div>
+        <?php endif; ?>
         
         <div class="card mb-5">
             <div class="card-header bg-primary text-white">
